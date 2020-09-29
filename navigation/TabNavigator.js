@@ -8,6 +8,7 @@ import AppointmentScreenNavigator from "./AppointmetScreenNavigator";
 // import LoginNavigator from "./LoginNavigator";
 import GroomerNavigator from "./GroomerNavigator";
 import Profile from '../screens/Profile'
+import Login from "../screens/Login";
 
 const Tab = createBottomTabNavigator();
 
@@ -29,9 +30,11 @@ export default class TabNavigator extends React.Component {
                 iconName = "ios-book";
               } else if (route.name === "Log Out") {
                 iconName = "ios-log-out";
+              } else if (route.name === "Settings") {
+                iconName = "ios-settings";
               }
               return <Ionicons name={iconName} size={size} color={color} />;
-            },
+            }
           })}
           tabBarOptions={{
             activeTintColor: "#396bb5",
@@ -41,6 +44,7 @@ export default class TabNavigator extends React.Component {
           <Tab.Screen name="Home" component={HomeScreenNavigator} />
           <Tab.Screen name="Appointments" component={AppointmentScreenNavigator} />
           <Tab.Screen name="Map" component={GroomerNavigator} />
+          <Tab.Screen name="Settings" component={Login} />
           <Tab.Screen name="Log Out" component={Profile} />
         </Tab.Navigator>
       </NavigationContainer>

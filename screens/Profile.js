@@ -19,12 +19,13 @@ import { Header } from 'react-native-elements';
 
 import { connect } from "react-redux";
 import Firebase from "../config/firebase";
+import Login from "./Login";
 
 
 class Profile extends React.Component {
   handleSignout = () => {
     Firebase.auth().signOut();
-    // this.props.navigation.navigate("Login")
+    this.props.navigation.navigate("Settings")
   };
 
 

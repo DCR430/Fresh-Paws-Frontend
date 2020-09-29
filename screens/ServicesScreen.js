@@ -6,9 +6,11 @@ import {
   StyleSheet,
   View,
   Animated,
-  TouchableOpacity
+  TouchableOpacity,
+  Button
 } from 'react-native'
 import { connect } from "react-redux";
+import { Rating, AirbnbRating } from 'react-native-elements';
 
 
 class ServicesScreen extends React.Component {
@@ -92,6 +94,10 @@ class ServicesScreen extends React.Component {
             <Text style={styles.cardtitle} >{this.props.route.params.otherParam.name}</Text>
             <Text style={styles.carddescription}>{this.props.route.params.otherParam.address}</Text>
             <Text style={styles.carddescription}>{this.props.route.params.otherParam.phone}</Text>
+            <Rating style={styles.rating} imageSize={15} readonly startingValue={3} />
+            <Button style={styles.button} title="Reviews" onPress={()=>this.props.navigation.navigate('ReviewScreen',
+            {otherParam: this.props.route.params.otherParam}
+            )}></Button>
             </View>
             </Animated.View>
           </View>
@@ -123,7 +129,6 @@ const styles = StyleSheet.create({
     top: 125,
     left: 0,
     right: 0,
-    
   },
   headerContainer: {
     width: '90%',
@@ -133,7 +138,6 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 1,
     shadowRadius: 5,
-  
   },
   contentContainer: {
     marginTop: 290,
@@ -194,7 +198,20 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 10,
     borderRadius: 25
-  }
+  },
+  rating: {
+    alignItems: "flex-start"
+  },
+  button: {
+
+    alignItems: "center",
+    backgroundColor: "#396bb5",
+    borderColor: "#396bb5",
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#fff"
+}
+
 
 })
   

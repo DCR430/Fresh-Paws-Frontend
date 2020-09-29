@@ -1,7 +1,7 @@
 import * as React from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Image, Animated, ScrollView } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, Image, Animated, ScrollView,Button } from "react-native";
 import { SearchBar, Card } from "react-native-elements";
-
+import { Rating, AirbnbRating } from 'react-native-elements';
 
 class HomeScreen extends React.Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class HomeScreen extends React.Component {
 
   filteredGroomers = () => {
     return this.state.groomerArray.filter((groomer) =>
-      groomer.name.toLowerCase().includes(this.state.search.toLowerCase())
+      (groomer.name.toLowerCase()|| groomer.zip).includes(typeof this.state.search == "number" ? this.state.search : this.state.search.toLowerCase())
     );
   };
   
@@ -53,6 +53,7 @@ class HomeScreen extends React.Component {
             <Text style={styles.title}>{groomer.name}</Text>
             <Text style={styles.description}>{groomer.address}</Text>
             <Text style={styles.description}></Text>
+            <Rating style={styles.rating} imageSize={15} readonly startingValue={3} />
 
           </View>
         </TouchableOpacity>
@@ -120,5 +121,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: '#ffa375',
 
+  },
+  rating: {
+    alignItems: "flex-start"
   }
 })
