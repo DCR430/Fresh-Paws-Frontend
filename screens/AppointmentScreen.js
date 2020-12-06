@@ -1,5 +1,4 @@
 
-//////////////////////////
 import * as React from "react";
 import { Text, View, Image, ScrollView, Button, Icon, StyleSheet } from "react-native";
 import { Header, Card } from "react-native-elements";

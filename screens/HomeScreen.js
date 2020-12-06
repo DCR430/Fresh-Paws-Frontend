@@ -31,6 +31,31 @@ class HomeScreen extends React.Component {
       })
   }
 
+//   fetchGroomers=()=>{
+//     fetch(`https://api.yelp.com/v3/businesses/search?term=${this.state.search}&latitude=40.708497166&longitude=-73.951996192`,{
+//         method: 'GET',
+//         headers: {
+//             "Authorization": "Bearer EybZ0JZJgIsstKKwcng2DzFtb7sNNvGjhd0TXVx3sP8_eyUaeWRBSZQpbI2_XwqNkTBzY3vnhwS_H0MF1nzGC1a42Bu40BozbPhk8mZeFKSm3anDg5NZFU6Tg_O3X3Yx"
+//         },
+//         // redirect: 'follow'
+//     })
+//     .then(response => response.json())
+//     .then(result => this.setState({
+//         groomerArray: result.businesses
+       
+//     }),
+//     this.setState({
+//         search: ""
+//     })
+// )
+// }
+
+
+
+
+
+
+
   filteredGroomers = () => {
     return this.state.groomerArray.filter((groomer) =>
       (groomer.name.toLowerCase()|| groomer.zip).includes(typeof this.state.search == "number" ? this.state.search : this.state.search.toLowerCase())
@@ -38,8 +63,10 @@ class HomeScreen extends React.Component {
   };
   
   render() {
+      
     const { search } = this.state;
     const Groomer = this.state.filteredArray.map((groomer) => (
+      //  const Groomer = this.state.groomerArray.map((groomer) => (
       <View style={styles.card} key={groomer.id}>
         <TouchableOpacity activeOpacity={0.7}  onPress={() =>
             this.props.navigation.navigate("ServicesScreen", {
@@ -52,8 +79,9 @@ class HomeScreen extends React.Component {
             </View>
             <Text style={styles.title}>{groomer.name}</Text>
             <Text style={styles.description}>{groomer.address}</Text>
-            <Text style={styles.description}></Text>
-            <Rating style={styles.rating} imageSize={15} readonly startingValue={3} />
+            <Text style={styles.description}>{groomer.zip}</Text>
+            {/* <Text style={styles.description}>{groomer.categories[0].title}</Text> */}
+            <Rating style={styles.rating} imageSize={15} readonly startingValue={Math.random()* 6 } />
 
           </View>
         </TouchableOpacity>
@@ -71,7 +99,6 @@ class HomeScreen extends React.Component {
           />
           <ScrollView>
             <View>
-            {/* <MyCarousel /> */}
             {Groomer}
             </View>
           </ScrollView>

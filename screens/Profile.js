@@ -1,17 +1,4 @@
-// import React, { Component } from 'react'
 
-// export default class Profile extends Component {
-//     render() {
-//         return (
-//             <div>
-//                 Profile
-                
-//             </div>
-//         )
-//     }
-// }
-
-////////////////////////////////
 
 import React from "react";
 import { View, Text, StyleSheet, Button, DevSettings } from "react-native";

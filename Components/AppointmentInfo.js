@@ -35,7 +35,7 @@ class AppointmentInfo extends React.Component {
   };
 
     render(){
-        console.log(this.state.servicesArray)
+       
 			return(
 				<View style={{ justifyContent: "center" }}>
 				<Image

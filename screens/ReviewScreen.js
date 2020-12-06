@@ -88,7 +88,7 @@ export class ReviewScreen extends Component {
             </Button>
             <AirbnbRating
                 count={5}
-                reviews={["Terrible", "Meh", "OK", "Great!", "🐾😻So Fresh, So Clean🐶🐾"]}
+                reviews={["Terrible", "Meh", "OK", "Great!", "😻So Fresh, So Clean🐶"]}
                 defaultRating={0}
                 size={20}
                 onFinishRating={rate => this.setState({

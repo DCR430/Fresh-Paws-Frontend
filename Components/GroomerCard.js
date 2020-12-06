@@ -114,7 +114,7 @@ class GroomerCard extends React.Component {
   
   render() 
   {
-    console.log(this.props.user)
+  
     return (
       <>
        <View

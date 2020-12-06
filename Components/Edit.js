@@ -112,7 +112,7 @@ class GroomerCard extends React.Component {
   }
   
   render() {
-    console.log(this.props)
+  
     return (
       <>
        <View

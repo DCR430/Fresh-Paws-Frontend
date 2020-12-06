@@ -7,7 +7,7 @@ import { material, webWeights } from "react-native-typography";
 
 class ConfirmationScreen extends React.Component {
   render() {
-    console.log(this.props)
+  
     return (
       <View style={{backgroundColor:"#ffa475", flex: 1, justifyContent: "center", alignItems: "center" }}>
         <Text style={webWeights.bold} >Your Appointment is Confirmed</Text>

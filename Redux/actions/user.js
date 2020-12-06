@@ -39,7 +39,7 @@ export const login = () => {
 
       dispatch(getUser(response.user.uid));
     } catch (e) {
-      alert(e);
+      alert(e, "Invalid Login Attempt");
     }
   };
 };

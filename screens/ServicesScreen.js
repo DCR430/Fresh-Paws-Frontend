@@ -53,7 +53,7 @@ class ServicesScreen extends React.Component {
           <Text style={styles.cardtitle}>{service.name}</Text>
           <Text style={styles.carddescription}>{service.description}</Text>
           <View style={styles.cardtagContainer}>
-          <Text>Price: ${service.price}.00</Text>
+          <Text>Price ${service.price}.00</Text>
           </View>
         </View>
       </TouchableOpacity>
@@ -94,7 +94,7 @@ class ServicesScreen extends React.Component {
             <Text style={styles.cardtitle} >{this.props.route.params.otherParam.name}</Text>
             <Text style={styles.carddescription}>{this.props.route.params.otherParam.address}</Text>
             <Text style={styles.carddescription}>{this.props.route.params.otherParam.phone}</Text>
-            <Rating style={styles.rating} imageSize={15} readonly startingValue={3} />
+            {/* <Rating style={styles.rating} imageSize={15} readonly startingValue={Math.random()* 6} /> */}
             <Button style={styles.button} title="Reviews" onPress={()=>this.props.navigation.navigate('ReviewScreen',
             {otherParam: this.props.route.params.otherParam}
             )}></Button>
