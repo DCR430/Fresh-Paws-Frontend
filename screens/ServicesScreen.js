@@ -112,7 +112,7 @@ class ServicesScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffa375'
+    backgroundColor: 'white'
   },
   scrollViewContainer: {
     flex: 1
