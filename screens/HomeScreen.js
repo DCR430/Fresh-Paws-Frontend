@@ -66,7 +66,6 @@ class HomeScreen extends React.Component {
       
     const { search } = this.state;
     const Groomer = this.state.filteredArray.map((groomer) => (
-      //  const Groomer = this.state.groomerArray.map((groomer) => (
       <View style={styles.card} key={groomer.id}>
         <TouchableOpacity activeOpacity={0.7}  onPress={() =>
             this.props.navigation.navigate("ServicesScreen", {
@@ -80,9 +79,7 @@ class HomeScreen extends React.Component {
             <Text style={styles.title}>{groomer.name}</Text>
             <Text style={styles.description}>{groomer.address}</Text>
             <Text style={styles.description}>{groomer.zip}</Text>
-            {/* <Text style={styles.description}>{groomer.categories[0].title}</Text> */}
             <Rating style={styles.rating} imageSize={15} readonly startingValue={Math.random()* 6 } />
-
           </View>
         </TouchableOpacity>
       </View>
@@ -94,8 +91,6 @@ class HomeScreen extends React.Component {
             placeholder="Find a Groomer"
             onChangeText={this.updateSearch}
             value={search}
-            
-
           />
           <ScrollView>
             <View>

@@ -45,7 +45,7 @@ export default class TabNavigator extends React.Component {
           <Tab.Screen name="Appointments" component={AppointmentScreenNavigator} />
           <Tab.Screen name="Map" component={GroomerNavigator} />
           <Tab.Screen name="Log Out" component={Profile} />
-          <Tab.Screen name="Settings" component={Login} />
+          {/* <Tab.Screen name="Settings" component={Login} /> */}
         </Tab.Navigator>
       </NavigationContainer>
     );

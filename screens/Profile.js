@@ -12,7 +12,7 @@ import Login from "./Login";
 class Profile extends React.Component {
   handleSignout = () => {
     Firebase.auth().signOut();
-    this.props.navigation.navigate("Settings")
+    this.props.navigation.navigate("HomeScreen")
   };
 
 
